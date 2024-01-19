@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator App</title>
+  <!-- Style sheet link -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- google fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main">
+    <div class="cacl">
+      <div class="header">
+        <h3>calc</h3>
+        <div class="togg">
+          <h4>THEME</h4>
+          <button id="theme-switcher">
+            <span class="theme-number active" onclick="switchThemeByThemeNumber(this);">1</span>
+            <span class="theme-number " onclick="switchThemeByThemeNumber(this);">2</span>
+            <span class="theme-number " onclick="switchThemeByThemeNumber(this);">3</span>
+            <span class="switch" id="switch"></span>
+          </button>
+        </div>
+      </div>
+      <h1 class="screen">
+        0
+      </h1>
+      <div class="key-pad">
+        <button class="numbers">7</button>
+        <button class="numbers">8</button>
+        <button class="numbers">9</button>
+        <button id="del">DEL</button>
+        <button class="numbers">4</button>
+        <button class="numbers">5</button>
+        <button class="numbers">6</button>
+        <button class="numbers">+</button>
+        <button class="numbers">1</button>
+        <button class="numbers">2</button>
+        <button class="numbers">3</button>
+        <button class="numbers">-</button>
+        <button class="numbers">.</button>
+        <button class="numbers">0</button>
+        <button class="numbers">/</button>
+        <button class="numbers">x</button>
+        <button id="reset">RESET</button>
+        <button id="equal">=</button>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

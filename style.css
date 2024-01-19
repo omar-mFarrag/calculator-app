@@ -1,0 +1,243 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: inherit;
+}
+:root{
+    /* Theme One */
+    /* backgrounds */
+    --th1-bg: #3a4764;
+    --th1-keypad-bg: #232c43;
+    --th1-result-bg: #182034;
+    /* keys */
+    --th1-del-key: hsl(225, 21%, 49%);
+    --th1-del-key-shadow: hsl(224, 28%, 35%);
+    --th1-equal-key: hsl(6, 63%, 50%);
+    --th1-equal-key-shadow: hsl(6, 70%, 34%);
+    --th1-number-key: hsl(30, 25%, 89%);
+    --th1-number-key-shadow: hsl(28, 16%, 65%);
+    /* text */
+    --th1-numbers-c: hsl(221, 14%, 31%);
+    --th1-text-c: hsl(0, 0%, 100%);
+    --th1-equal-c: hsl(0, 0%, 100%);
+    /* 555555555555555555555555555555555555555555555555555555555555555 */
+    /* Theme two */
+    /* backgrounds */
+    --th2-bg: hsl(0, 0%, 90%);
+    --th2-keypad-bg: hsl(0, 5%, 81%);
+    --th2-result-bg: hsl(0, 0%, 93%);
+    /* keys */
+    --th2-del-key: hsl(185, 42%, 37%);
+    --th2-del-key-shadow: hsl(185, 58%, 25%);
+    --th2-equal-key: hsl(25, 98%, 40%);
+    --th2-equal-key-shadow: hsl(25, 99%, 27%);
+    --th2-number-key: hsl(45, 7%, 89%);
+    --th2-number-key-shadow: hsl(35, 11%, 61%);
+    /* text */
+    --th2-numbers-c: hsl(60, 10%, 19%);
+    --th2-text-c: hsl(60, 10%, 19%);
+    --th2-result-c: hsl(0, 0%, 100%);
+    --th2-equal-c: hsl(0, 0%, 100%);
+    
+    /* 555555555555555555555555555555555555555555555555555555555555555 */
+    /* Theme three */
+    /* backgrounds */
+    --th3-bg: hsl(268, 75%, 9%);
+    --th3-keypad-bg: hsl(268, 71%, 12%);
+    --th3-result-bg:  hsl(268, 71%, 12%);
+    /* keys */
+    --th3-del-key: hsl(281, 89%, 26%);
+    --th3-del-key-shadow: hsl(285, 91%, 52%);
+    --th3-equal-key: hsl(176, 100%, 44%);
+    --th3-equal-key-shadow: hsl(177, 92%, 70%);
+    --th3-number-key: hsl(268, 47%, 21%);
+    --th3-number-key-shadow: hsl(290, 70%, 36%);
+    /* text */
+    --th3-numbers-c: hsl(52, 100%, 62%);
+    --th3-text-c: hsl(52, 100%, 62%);
+    --th3-equal-c: hsl(198, 20%, 13%);
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+}
+.main{
+    background-color: var(--th1-bg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cacl{
+    width: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h3{
+    color: var(--th1-text-c);
+    font-size: 32px;
+}
+.header h4{
+    color: var(--th1-text-c);
+    font-size: 18px;
+}
+.header .togg{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header .togg button{
+    width: 80px;
+    height: 30px;
+    background-color: var(--th1-keypad-bg);
+    border: none;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+}
+.header .togg button span:not(.switch){
+    position: absolute;
+    font-size: 20px;
+    color: var(--th1-text-c);
+    top: -80%;
+    font-weight: bold;
+    transition: .3s;
+}
+.header .togg button span:nth-child(1){
+    left: 10px;
+}
+.header .togg button span:nth-child(2){
+    left: 50%;
+    transform: translate(-50%);
+}
+.header .togg button span:nth-child(3){
+    right: 10px;
+}
+.header .togg button span.active{
+    font-size: 25px;
+    top: -83%;
+}
+.header .togg button .switch{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--th1-equal-key);
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+.cacl .screen{
+    width: 100%;
+    height: 100px;
+    background-color: var(--th1-result-bg);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: flex-end;
+    color: var(--th1-text-c);
+    font-size: 35px;
+    font-weight: bold;
+    overflow: hidden;
+}
+.key-pad{
+    background-color: var(--th1-keypad-bg);
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto , 1fr));
+    gap: 20px;
+}
+.key-pad button:nth-child(17){
+    grid-column: 1 / span 2;
+}
+.key-pad button:nth-child(18){
+    grid-column: 3 / span 2;
+}
+.key-pad button{
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.key-pad button.numbers{
+    background-color: var(--th1-number-key);
+    color: var(--th1-numbers-c);
+    border-bottom: 3px solid var(--th1-number-key-shadow);
+}
+.key-pad button#del,
+.key-pad button#reset{
+    background-color: var(--th1-del-key);
+    color: var(--th1-text-c);
+    border-bottom: 3px solid var(--th1-del-key-shadow);
+}
+.key-pad button#equal{
+    background-color: var(--th1-equal-key);
+    color: var(--th1-equal-c);
+    border-bottom: 3px solid var(--th1-equal-key-shadow);
+}
+@media (max-width: 500px) {
+    body{
+        width: 100%;
+        height: 100vh;
+    }
+    .main{
+        padding: 20px;
+    }
+    .cacl{
+        width: 100%;
+        gap: 10px;
+    }
+    .header h4{
+        font-size: 15px;
+    }
+    .cacl .screen{
+        height: 80px;
+    }
+    .key-pad{
+        background-color: var(--th1-keypad-bg);
+        padding: 20px;
+        gap: 15px;
+    }
+    .key-pad button{
+        height: 70px;
+        font-size: 32px;
+        font-weight: bold;
+    }
+    .key-pad button.numbers{
+        background-color: var(--th1-number-key);
+        color: var(--th1-numbers-c);
+        border-bottom: 3px solid var(--th1-number-key-shadow);
+    }
+    .key-pad button#del,
+    .key-pad button#reset{
+        background-color: var(--th1-del-key);
+        color: var(--th1-text-c);
+        border-bottom: 3px solid var(--th1-del-key-shadow);
+    }
+    .key-pad button#equal{
+        background-color: var(--th1-equal-key);
+        color: var(--th1-text-c);
+        border-bottom: 3px solid var(--th1-equal-key-shadow);
+    }
+}
