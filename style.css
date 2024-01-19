@@ -61,6 +61,7 @@
 }
 body{
     font-family: 'League Spartan', sans-serif;
+    transition: .3s;
 }
 .main{
     background-color: var(--th1-bg);
@@ -195,6 +196,10 @@ body{
     background-color: var(--th1-equal-key);
     color: var(--th1-equal-c);
     border-bottom: 3px solid var(--th1-equal-key-shadow);
+}
+.key-pad button{
+    cursor: pointer;
+    transition: 150ms;
 }
 @media (max-width: 500px) {
     body{

@@ -67,3 +67,43 @@ function themeChanger() {
         document.querySelectorAll('.key-pad button#equal')[i].style.borderBottom = `3px solid var(--th${currentTheme}-equal-key-shadow)`;
     }
 }
+
+var buttons = document.querySelectorAll('.key-pad button');
+
+for (let i = 0; i < buttons.length; i++) {
+    if (!buttons[i].hasAttribute('id')) {
+        buttons[i].addEventListener('click', function() {
+            this.style.borderBottom = `0px solid var(--th${currentTheme}-number-key-shadow)`;
+            this.style.height = `43px`;
+            this.style.transform = `translateY(3px)`
+            setTimeout(() => {
+            this.style.height = `45px`;
+            this.style.borderBottom = `3px solid var(--th${currentTheme}-number-key-shadow)`;
+            this.style.transform = `translateY(0px)`;
+            }, 150);
+        })
+    }
+}
+document.getElementById('equal').addEventListener('click', function() {
+    this.style.height = `43px`;
+    this.style.transform = `translateY(3px)`
+    this.style.borderBottom = `0px solid var(--th${currentTheme}-equal-key-shadow)`;
+    setTimeout(() => {
+        this.style.height = `45px`;
+        this.style.transform = `translateY(0px)`
+        this.style.borderBottom = `3px solid var(--th${currentTheme}-equal-key-shadow)`;
+    }, 150);
+})
+let resetAndDel = [document.getElementById('reset'), document.getElementById('del')];
+for (let i = 0; i < resetAndDel.length; i++) {
+    resetAndDel[i].addEventListener('click', function() {
+        this.style.borderBottom = `0px solid var(--th${currentTheme}-del-key-shadow`;
+        this.style.height = `43px`;
+        this.style.transform = `translateY(3px)`
+        setTimeout(() => {
+        this.style.height = `45px`;
+        this.style.borderBottom = `3px solid var(--th${currentTheme}-del-key-shadow`;
+        this.style.transform = `translateY(0px)`;
+        }, 150);
+    })
+}
