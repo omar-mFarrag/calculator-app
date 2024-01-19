@@ -246,3 +246,11 @@ body{
         border-bottom: 3px solid var(--th1-equal-key-shadow);
     }
 }
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
