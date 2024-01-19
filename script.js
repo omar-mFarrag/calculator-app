@@ -69,15 +69,32 @@ function themeChanger() {
 }
 
 var buttons = document.querySelectorAll('.key-pad button');
+window.onresize = function(){
+    for (let i = 0; i < buttons.length; i++) {
+        if (document.body.offsetWidth < 500) {
+            buttonHeight = 70;
+        }else{
+            buttonHeight = 45;
+        }
+        buttons[i].style.height = `${buttonHeight}px`;
+    }
+};
+let buttonHeight = 45;
+if (document.body.offsetWidth < 500) {
+    buttonHeight = 70;
+}else{
+    buttonHeight = 45;
+}
+
 
 for (let i = 0; i < buttons.length; i++) {
     if (!buttons[i].hasAttribute('id')) {
         buttons[i].addEventListener('click', function() {
             this.style.borderBottom = `0px solid var(--th${currentTheme}-number-key-shadow)`;
-            this.style.height = `43px`;
-            this.style.transform = `translateY(3px)`
+            this.style.height = `${buttonHeight - 2}px`;
+            this.style.transform = `translateY(2px)`
             setTimeout(() => {
-            this.style.height = `45px`;
+            this.style.height = `${buttonHeight}px`;
             this.style.borderBottom = `3px solid var(--th${currentTheme}-number-key-shadow)`;
             this.style.transform = `translateY(0px)`;
             }, 150);
@@ -85,11 +102,11 @@ for (let i = 0; i < buttons.length; i++) {
     }
 }
 document.getElementById('equal').addEventListener('click', function() {
-    this.style.height = `43px`;
-    this.style.transform = `translateY(3px)`
+    this.style.height = `${buttonHeight - 2}px`;
+    this.style.transform = `translateY(2px)`
     this.style.borderBottom = `0px solid var(--th${currentTheme}-equal-key-shadow)`;
     setTimeout(() => {
-        this.style.height = `45px`;
+        this.style.height = `${buttonHeight}px`;
         this.style.transform = `translateY(0px)`
         this.style.borderBottom = `3px solid var(--th${currentTheme}-equal-key-shadow)`;
     }, 150);
@@ -98,10 +115,10 @@ let resetAndDel = [document.getElementById('reset'), document.getElementById('de
 for (let i = 0; i < resetAndDel.length; i++) {
     resetAndDel[i].addEventListener('click', function() {
         this.style.borderBottom = `0px solid var(--th${currentTheme}-del-key-shadow`;
-        this.style.height = `43px`;
-        this.style.transform = `translateY(3px)`
+        this.style.height = `${buttonHeight - 2}px`;
+        this.style.transform = `translateY(2px)`
         setTimeout(() => {
-        this.style.height = `45px`;
+        this.style.height = `${buttonHeight}px`;
         this.style.borderBottom = `3px solid var(--th${currentTheme}-del-key-shadow`;
         this.style.transform = `translateY(0px)`;
         }, 150);
