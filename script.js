@@ -97,7 +97,7 @@ for (let i = 0; i < buttons.length; i++) {
             this.style.height = `${buttonHeight}px`;
             this.style.borderBottom = `3px solid var(--th${currentTheme}-number-key-shadow)`;
             this.style.transform = `translateY(0px)`;
-            }, 150);
+            }, 50);
         })
     }
 }
@@ -109,7 +109,7 @@ document.getElementById('equal').addEventListener('click', function() {
         this.style.height = `${buttonHeight}px`;
         this.style.transform = `translateY(0px)`
         this.style.borderBottom = `3px solid var(--th${currentTheme}-equal-key-shadow)`;
-    }, 150);
+    }, 50);
 })
 let resetAndDel = [document.getElementById('reset'), document.getElementById('del')];
 for (let i = 0; i < resetAndDel.length; i++) {
@@ -121,6 +121,6 @@ for (let i = 0; i < resetAndDel.length; i++) {
         this.style.height = `${buttonHeight}px`;
         this.style.borderBottom = `3px solid var(--th${currentTheme}-del-key-shadow`;
         this.style.transform = `translateY(0px)`;
-        }, 150);
+        }, 50);
     })
 }
